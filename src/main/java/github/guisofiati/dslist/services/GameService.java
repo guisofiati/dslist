@@ -16,6 +16,6 @@ public class GameService {
 
     public List<GameMinDTO> findAll() {
         List<Game> gamesEntity = gameRepository.findAll();
-        return gamesEntity.stream().map(game -> new GameMinDTO(game)).toList();
+        return gamesEntity.stream().map(GameMinDTO::new).toList();
     }
 }
